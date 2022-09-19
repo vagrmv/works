@@ -1,0 +1,54 @@
+// main: ../style.less
+.btn{
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.6rem;
+  text-decoration: none;
+  text-align: center;
+  // vertical-align: middle;
+
+  color: @text-color-white;
+  background-color: @btn-bgcolor;
+  border: 1px solid @btn-bgcolor;
+  border-radius: @border-radius;
+
+  padding: 10px 30px;
+
+  transition: color @trnstn, background-color @trnstn, border-color @trnstn;
+
+  &:hover,
+  &:focus{
+    outline: 0;
+    color: @btn-bgcolor;
+    background-color: transparent;
+  }
+
+  &--reversecolor{
+    color: @text-color-white;
+    background-color: transparent;
+    border-color: @text-color-white;
+    &:hover,
+    &:focus{
+      outline: 0;
+      color: @text-color-white;
+      background-color: @btn-bgcolor;
+      border-color: @btn-bgcolor;
+    }
+  }
+  &--slim{
+    font-size: 1.3rem;
+    padding: 7px 30px;
+  }
+  &--blacked{
+    color: @text-color-primary;
+    background-color: transparent;
+    border-color: @text-color-primary;
+    &:hover,
+    &:focus{
+      outline: 0;
+      color: @text-color-white;
+      background-color: @btn-bgcolor;
+      border-color: @btn-bgcolor;
+    }
+  }
+}

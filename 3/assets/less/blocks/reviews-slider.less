@@ -1,0 +1,34 @@
+// main: ../style.less
+.reviews-slider{
+  width: 100%;
+  .flex-col-center-center();
+}
+.reviews-slider__nav{
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: right;
+}
+.reviews-slider__btn{
+  display: inline-block;
+  font-size: 4rem;
+
+  padding: 0;
+  height: auto;
+  width: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1rem;
+
+  color: @btn-bgcolor;
+  transition: color @trnstn;
+  &:hover,
+  &:focus{
+    outline: 0;
+    color: darken(@btn-bgcolor, 10%);
+  }
+}
+.reviews-slider__list{
+  width: 100%;
+  .flex-row-center-center();
+}

@@ -1,0 +1,55 @@
+// main: ../style.less
+.about{
+    &.row{
+        align-items: center;
+    }
+    &__left-side{
+        img{
+            border-radius: 1em;
+            display: block;
+            padding: 0;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    &__content{
+        h3{
+            .feature-text;
+        }
+        p{
+            .simple-text;
+            margin-top: .5em;
+            margin-bottom: 1.5em;
+        }
+    }
+}
+
+@media screen and (max-width: 1110px) {
+    
+}
+
+@media screen and (max-width: 991px) {
+  
+}
+
+@media screen and (max-width: 767px) {
+    .about{
+        &__left-side{
+            .col-12-12;
+            img{
+                max-height: 250px
+            }
+        }
+        &__right-side{
+            margin-top: 2em;
+            text-align: center;
+            .col-12-12;
+        }
+    }
+}
+
+@media screen and (max-width: 479px) {
+
+}

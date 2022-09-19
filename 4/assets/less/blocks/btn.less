@@ -1,0 +1,32 @@
+// main: ../style.less
+
+.btn {
+    .white-text-slim;
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5em 1em;
+    background: @g-purple;
+    border-radius: 0.5em;
+    .hover-darken($color);
+    &--shady{
+        background: @c-white_o10;
+        .hover-darken($color, $background);
+    }
+    &--product-card{
+        display: block;
+        width: 100%;
+        text-align: center;
+        border: 1px solid @c-purple;
+        transition: color .1s linear, background-color .1s linear;
+        &:hover{
+            color: @c-purple;
+            background: transparent;
+        }
+    }
+    &--white{
+        background: @c-white_o50;
+        .hover-darken($color, $background);
+    }
+}

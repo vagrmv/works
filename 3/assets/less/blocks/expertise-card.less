@@ -1,0 +1,125 @@
+// main: ../style.less
+.expertise-card{
+  text-decoration: none;
+  cursor: pointer;
+  height: inherit;
+  width: 25%;
+  margin-right: 20px;
+  padding: 20px;
+  padding-bottom: 80px;
+  box-shadow: 0px 0px 7px 0px #ccc;
+  background-color: @text-color-white;
+  text-align: center;
+  .flex-col-center-center();
+  justify-content: flex-start;
+
+  transition: background-color @trnstn, color @trnstn, transform @trnstn;
+  &:last-child{
+    margin-right: 0;
+  }
+  &:hover,
+  &:focus{
+    outline: 0;
+    background-color: @btn-bgcolor;
+    color: @text-color-white;
+
+    transform: translateY(-15px);
+
+    .expertise-card__btn{
+      span,
+      span::before,
+      span::after{
+        border-color: @text-color-white;
+      }
+    }
+  }
+}
+.expertise-card__title{
+  color: inherit;
+  min-height: 30%;
+  font-size: 2.2rem;
+}
+.expertise-card__text{
+  // min-height: 60%;
+  margin-top: 20px;
+  font-size: 1.6rem;
+  color: inherit;
+  line-height: 2rem;
+}
+.expertise-card__btn{
+  display: block;
+  z-index: 1;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 80px;
+  height: 30px;
+
+  padding: 0px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: inherit;
+  font-size: inherit;
+  color: inherit;
+
+  &:focus{
+    outline: 0;
+    span,
+    span::before,
+    span::after{
+      border-color: darken(@btn-bgcolor, 10%);
+    }
+  }
+
+  span{
+    content: "";
+    margin:0 auto;
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-right: 5px solid @btn-bgcolor;
+    border-bottom: 5px solid @btn-bgcolor;
+    border-radius: 5px;
+    border-bottom-right-radius: 2px;
+    transform: rotate(-45deg);
+    transition: border-color @trnstn;
+    &::before{
+      content: "";
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-color: transparent;
+      border-right: 5px solid @btn-bgcolor;
+      border-bottom: 5px solid @btn-bgcolor;
+      border-radius: 5px;
+      border-bottom-right-radius: 2px;
+
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      transform: translate3d(-15px, -15px, 0);
+      transition: border-color @trnstn;
+    }
+    &::after{
+      content: "";
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-color: transparent;
+      border-right: 5px solid @btn-bgcolor;
+      border-bottom: 5px solid @btn-bgcolor;
+      border-radius: 5px;
+      border-bottom-right-radius: 2px;
+
+      position: absolute;
+      bottom: -5px;
+      right: 0;
+      transform: translate3d(20px, 15px, 0);
+      transition: border-color @trnstn;
+    }
+  }
+}

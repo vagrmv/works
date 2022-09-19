@@ -1,0 +1,115 @@
+// main: ../style.less
+
+.header {
+    &__inner {
+        padding: 1em 0;
+
+        & > div {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__logo {
+        .white-text;
+        font-size: 2.5rem;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        text-align: left;
+        transition: color .1s linear;
+
+        & span {
+            color: @c-purple;
+        }
+
+        &:hover {
+            color: @c-purple;
+        }
+    }
+
+    &__search-field {
+        position: relative;
+
+        & label {
+            position: absolute;
+            top: 50%;
+            left: 2em;
+            transform: translate(0, -50%);
+            cursor: text;
+
+            i {
+                font-size: 2rem;
+                line-height: 1;
+                color: @c-white_o50;
+            }
+        }
+
+        & input {
+            .simple-text;
+            width: 100%;
+            padding: 0.5em 0.5em 0.5em 2em;
+            border: none;
+            background: @c-white_o10;
+            border-radius: 0.5em;
+            .hover-darken($color, $background);
+
+            &::placeholder {
+                .simple-text;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1110px) {
+
+}
+
+@media screen and (max-width: 991px) {
+    .header{
+        &__search-field{
+            .col-3-12;
+        }
+        &__nav{
+            .col-7-12;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .header{
+        position: relative;
+        transition: background .2s linear;
+        &.active{
+            background: @c-header_background;
+        }
+        &__inner{
+            .col-2-12{
+                .col-3-12;
+            }
+        }
+        &__search-field{
+            .col-5-12;
+        }
+        &__nav{
+            .col-2-12;
+            justify-content: flex-end;
+        }
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .header{
+        &__inner{
+            .col-2-12{
+                .col-4-12;
+            }
+        }
+        &__search-field{
+            .col-5-12;
+        }
+        &__nav{
+            .col-2-12;
+        }
+    }
+}

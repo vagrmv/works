@@ -1,0 +1,72 @@
+// main: ../style.less
+.advertisment{
+  width: 100;
+}
+.advertisment__inner{
+  width: 100%;
+  height: 250px;
+}
+.advertisment__list{
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-15%);
+
+  width: 100%;
+
+  .flex-row-between-center();
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+.advertisment__item{
+  background-color: @text-color-white;
+
+  .flex-col-between-center();
+  align-items: flex-start;
+
+  @temp: percentage(20/1170);
+  width: 50% - @temp;
+  padding: 40px;
+
+  box-shadow: 0px 0px 20px 0px #aaa;
+  // &:last-child{
+  //   margin-left: 20px;
+  // }
+}
+.advertisment__title,
+.advertisment__descr,
+.advertisment__subtitle{
+  color: @text-color-primary;
+  margin-bottom: 20px;
+}
+.advertisment__title{
+  font-size: 3.2rem;
+}
+.advertisment__descr{
+  font-size: 1.6rem;
+}
+.advertisment__subtitle{
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+
+@media (max-width: @px768) {
+  .advertisment__item{
+    padding: 20px;
+  }
+}
+@media (max-width: @px650) {
+  .advertisment__item{
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    &:last-child{
+      margin-top: 20px;
+    }
+  }
+  .advertisment__inner{
+    height: 350px;
+  }
+}

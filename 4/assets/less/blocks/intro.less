@@ -1,0 +1,159 @@
+// main: ../style.less
+.intro {
+    margin-top: 11em;
+
+    &__inner {
+        align-items: stretch;
+    }
+
+    &__title {
+        .huge-title;
+        line-height: 1.2
+    }
+
+    &__subtitle {
+        .simple-text;
+        margin-top: 0.5em;
+        margin-bottom: 1.5em;
+    }
+
+    &__btns {
+        *+* {
+            margin-left: 1em;
+        }
+    }
+
+    &__features {
+        margin-top: 4em;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        &-item {
+            h4 {
+                .feature-text;
+            }
+
+            p {
+                .simple-text;
+            }
+        }
+    }
+
+    &__galery {
+        height: 100%;
+        width: calc(~"100% + 16px");
+
+        &-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: calc(~"100%");
+
+            & img {
+                width: 100%;
+                display: block;
+                margin-top: 16px; // not em because its corresponding to grid columns padding which is fixed in pixels too
+                object-fit: cover;
+                border-radius: 1em;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+
+            &:nth-child(1) {
+                img {
+                    &:nth-child(1) {
+                        height: 30%;
+                    }
+
+                    &:nth-child(2) {
+                        height: 50%;
+                    }
+
+                    &:nth-child(3) {
+                        height: 20%;
+                    }
+                }
+            }
+
+            &:nth-child(2) {
+                img {
+                    &:nth-child(1) {
+                        height: 20%;
+                    }
+
+                    &:nth-child(2) {
+                        height: 50%;
+                    }
+
+                    &:nth-child(3) {
+                        height: 30%;
+                    }
+                }
+            }
+
+            &:nth-child(3) {
+                img {
+                    &:nth-child(1) {
+                        height: 80%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1110px) {
+
+}
+
+@media screen and (max-width: 991px) {
+
+}
+
+@media screen and (max-width: 767px) {
+    .intro {
+        &__left-side {
+            .col-6-12;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .intro {
+        margin-top: 5em;
+
+        &__features{
+            width: 70%;
+        }
+        &__left-side {
+            .col-12-12;
+        }
+
+        &__right-side {
+            .col-12-12;
+            padding: 0 5em;
+            margin-top: 5em;
+        }
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .intro {
+        margin-top: 5em;
+
+        &__features{
+            width: 100%;
+        }
+        &__left-side {
+            .col-12-12;
+        }
+
+        &__right-side {
+            .col-12-12;
+            margin-top: 5em;
+        }
+    }
+}

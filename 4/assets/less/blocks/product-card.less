@@ -1,0 +1,66 @@
+// main: ../style.less
+.product-card{
+    padding: 2.6em;
+    background: @c-white_o10;
+    border-radius: 1em;
+    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 16px;
+    .hover-fadein($background);
+    &__image{
+        width: 100%;
+        height: 380px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 1em;
+        display: block;
+    }
+    &__content{
+        margin-top: 2em;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        &-left{
+            text-align: left;
+            p{
+                .simple-text;
+            }
+            h4{
+                .white-text;
+                margin: .5em 0 1.15em;
+            }
+        }
+        &-right{
+            text-align: right;
+            p{
+                .small-text;
+            }
+            h4{
+                .white-text
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1110px) {
+    
+}
+
+@media screen and (max-width: 991px) {
+  
+}
+
+@media screen and (max-width: 767px) {
+    .product-card{
+        &__image{
+            height: 300px;
+        }
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .product-card{
+        &__image{
+            height: 250px;
+        }
+    }
+}

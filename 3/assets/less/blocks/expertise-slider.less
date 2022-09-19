@@ -1,0 +1,37 @@
+// main: ../style.less
+.expertise-slider{
+  // margin-top: 20px;
+  width: 100%;
+  .flex-col-center-center();
+}
+.expertise-slider__nav{
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: right;
+}
+.expertise-slider__btn{
+  display: inline-block;
+  // .flex-row-center-center();
+  font-size: 4rem;
+
+  padding: 0;
+  height: auto;
+  width: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1rem;
+
+  color: @btn-bgcolor;
+  transition: color @trnstn;
+  &:hover,
+  &:focus{
+    outline: 0;
+    color: darken(@btn-bgcolor, 10%);
+  }
+}
+.expertise-slider__list{
+  width: 100%;
+  .flex-row-center-center();
+  align-items: stretch;
+}

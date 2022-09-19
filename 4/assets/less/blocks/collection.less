@@ -1,0 +1,52 @@
+// main: ../style.less
+.collection{
+    &__categories{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 -8px;
+        .btn{
+            display: block;
+            margin: 0 8px 1.5em;
+            width: 25%;
+            text-align: center;
+            &.active{
+                background: @g-purple;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1110px) {
+    
+}
+
+@media screen and (max-width: 991px) {
+    .collection{
+        &__item{
+            .col-6-12;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    
+}
+
+@media screen and (max-width: 560px) {
+    .collection{
+        &__categories{
+            flex-wrap: wrap;
+            .btn{
+                width: calc(~"50% - 16px");
+            }
+        }
+        &__item{
+            .col-12-12;
+        }
+    }
+}
+
+@media screen and (max-width: 479px) {
+    
+}

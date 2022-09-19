@@ -1,0 +1,95 @@
+// main: style.less
+
+// place for mixins 
+
+// my grid styles
+.calculate-grid-columns(12);
+
+.calculate-grid-columns(@columns, @i: 1) when (@i <=@columns) {
+    .col-@{i}-@{columns} {
+        padding: 0 8px;
+        width: (@i * 100% / @columns);
+    }
+
+    .calculate-grid-columns(@columns, @i + 1)
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 -8px;
+}
+
+// text mixins
+.base-text-preset() {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 1.5;
+}
+
+.simple-text() {
+    .base-text-preset();
+    color:@c-white_o50;
+}
+
+.small-text() {
+    .simple-text();
+    font-size: 1.5rem
+}
+
+.white-text() {
+    .base-text-preset();
+    color: @c-white;
+    font-weight: 700;
+}
+
+.white-text-slim() {
+    .white-text();
+    font-weight: 500;
+}
+
+.feature-text() {
+    .white-text();
+    font-size: 3rem;
+}
+
+.section-title() {
+    .white-text();
+    font-size: 4rem;
+}
+
+.huge-title() {
+    .white-text();
+    font-size: 5rem;
+}
+
+// hover mixins
+.hover-darken(@color){
+    transition: color .1s linear;
+    &:hover{
+        color: darken(@color, 15%);
+    }
+}
+.hover-darken(@color, @bg){
+    transition: color .1s linear, background .1s linear;
+    &:hover{
+        background: darken(@bg, 15%);
+        color: darken(@color, 15%);
+    }
+}
+.hover-darken(@color, @bg, @bg-color){
+    transition: color .1s linear, background .1s linear, background-color .1s linear;
+    &:hover{
+        background-color: darken(@bg-color, 15%);
+        background: darken(@bg, 15%);
+        color: darken(@color, 15%);
+    }
+}
+.hover-fadein(@bg){
+    transition: background .1s linear;
+    &:hover{
+        background: fadein(@bg, 15%);
+    }
+}
